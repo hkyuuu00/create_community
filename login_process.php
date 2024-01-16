@@ -50,7 +50,7 @@
                         $_SESSION['userid'] = $u_id;  //유저아이디에 ktest라는 세션을 저장
                         $_SESSION['time'] = time();
 
-                        echo "<meta http-equiv='refresh' content='2; url=./community.php'>";
+                        echo "<meta http-equiv='refresh' content='2; url=./community.php?page=1'>";
                         }
                     }else{
                         echo "입력하신 ID 혹은 비밀번호가 없거나 다릅니다.";

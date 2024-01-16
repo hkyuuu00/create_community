@@ -43,8 +43,8 @@
                         // 이 함수는 결과 세트의 다음 행을 연관 배열로 반환합니다.
                         $row = mysqli_fetch_assoc($result2);
 
-                        $limit = 1;
-                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                        $limit = 15;
+                        $page = isset($_GET['page']) ? $_GET['page'] : 15;
 
                         // ceil() 함수를 사용하여 전체 페이지 수를 계산합니다. 
                         // ceil() 함수는 주어진 숫자보다 크거나 같은 가장 작은 정수를 반환합니다.

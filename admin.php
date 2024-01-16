@@ -20,7 +20,7 @@
                 <a href="./join.php">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="./login.php">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="./admin.php">관리자</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="./community.php">게시판</a><br>
+                <a href="./community.php?page=1">게시판</a><br>
                 <h1>검색</h1>
 
                 <form action="./admin.php" method="post">

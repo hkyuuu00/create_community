@@ -21,10 +21,19 @@
             echo "<p style='font-size: 14px;'><strong>어서오세요!  $userid"."님</strong></p>";    //세션이 있는 경우
         ?>
         <center>
-            <a href="./logout.php"><input type="button" value="로그아웃" style = "width: 80px; height: 25px; display: inline-block; position: relative; bottom: 50px; right: 610px;"></a>
+            <a href="./logout.php"><input type="button" value="로그아웃" style = "width: 80px; height: 25px; display: inline-block; float: left; position: relative; bottom: 10px; left: 30px;"></a>
             <h1 style = "font-size: 35px; display: inline-block; position: relative; right: 48px;">게시판</h1>
             <div style="border: 2px solid black; width: 680px; height: 550px; position: relative; top: 2px; background-color: #FFFFFF; border-radius: 10px;">
-                <a href="./write.php"><input type="button" value="글쓰기" style = "width: 60px; height: 25px; position: relative; left: 305px; top: 5px;"></a><br>
+            <form action="./search_post.php" method="post">
+                <select name = 'search_type' style = "float: left; position: relative; top: 10px; left: 20px; height: 20px;">
+                    <option value="p_title">제목</option>
+                    <option value="post">내용</option>
+                    <option value="u_id">작성자</option>
+                </select>
+                <input type="text" name = "search_p" placeholder = "검색어 입력" require style = "float: left; position: relative; top: 10px; left: 25px;">
+                <input type="submit" value = "검색" style = "float: left; position: relative; top: 10px; left: 30px; height: 22px;">
+            </form>
+                <a href="./write.php"><input type="button" value="글쓰기" style = "width: 60px; height: 25px; float: right; position: relative; right: 10px; top: 5px;"></a><br>
                 <table style = "border-collapse: collapse; position: absolute; left: 2.5px;">
                     <tr style = "text-align: center; font-size: 14px; font-weight: bold;">   
                         <td style="padding: 0px; border: 1px solid black; width: 60px;">번호</td>
@@ -77,9 +86,9 @@
                         for ($i = $start_link; $i <= $end_link; $i++) {
                             // 현재 페이지의 링크 색상을 변경합니다.
                             if ($i == $page) {
-                                echo "<span style='position: relative; top: 495px;'><a href='community.php?page=".$i."' style='color: red;'>&nbsp;".$i."&nbsp;</a></span>";
+                                echo "<span style='float: middle; position: relative; right: 110px; top: 495px;'><a href='community.php?page=".$i."' style='color: red;'>&nbsp;".$i."&nbsp;</a></span>";
                             } else {
-                                echo "<span style='position: relative; top: 495px;'><a href='community.php?page=".$i."'>&nbsp;".$i."&nbsp;</a></span>";
+                                echo "<span style='float: middle; position: relative; right: 110px; top: 495px;'><a href='community.php?page=".$i."'>&nbsp;".$i."&nbsp;</a></span>";
                             }
                         }
 

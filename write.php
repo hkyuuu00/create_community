@@ -21,8 +21,9 @@
 
         <center>
             <h1>글쓰기</h1>
+            <a href="./logout.php"><input type="button" value="로그아웃" style = "width: 80px; height: 25px; display: inline-block; position: relative;  bottom: 78px; right: 666px;"></a>
             <div style="border: 2px solid black; width: 680px; height: 550px; position: relative; top: 2px; background-color: #FFFFFF;">
-                <a href = "./community.php"><input type = "button" value = "뒤로가기" style = "position: relative; right: 300px; top: 5px;"></a><br><br><br>
+                <a href = "./community.php?page=1"><input type = "button" value = "뒤로가기" style = "position: relative; right: 300px; top: 5px;"></a><br><br><br>
                 <form action="./write_process.php" method="post">
                     <select name = 'p_type' style="height: 30px;">
                         <option value="freeboard">자유</option>

@@ -28,7 +28,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <input type="tel" name="u_phone" placeholder="전화번호 입력 (-제외)" onkeypress="return onlyNumber(event)" required>
+                                <input type="tel" name="u_phone" placeholder="전화번호 입력 (-제외)" minlength="11" maxlength="11" onkeypress="return onlyNumber(event)" required>
                                 <script>
                                 function onlyNumber(event){ //숫자만 입력할 수 있도록 하는 이벤트 설정
                                     event = event || window.event;
@@ -66,7 +66,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <input type="tel" name="u_phone" placeholder="전화번호 입력 (-제외)" onkeypress="return onlyNumber(event)" required>
+                                <input type="tel" name="u_phone" placeholder="전화번호 입력 (-제외)" minlength="11" maxlength="11" onkeypress="return onlyNumber(event)" required>
                                 <script>
                                 function onlyNumber(event){ //숫자만 입력할 수 있도록 하는 이벤트 설정
                                     event = event || window.event;

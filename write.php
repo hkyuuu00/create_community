@@ -15,13 +15,17 @@
         session_start();
         if(isset($_SESSION['userid'])){      //유저아이디에 세션가 있는지 조사
             $userid = $_SESSION['userid'];
-            echo "<p style='font-size: 14px;'><strong>어서오세요!  $userid"."님</strong></p>";    //세션이 있는 경우
+            if($userid == 'admin'){
+                echo '<a href="./admin.php"><input type="button" value="회원검색" style = "width: 80px; height: 25px; display: inline-block; float: left; position: relative; bottom: 1px; left: 30px;"></a><br><br>';
+            }else{
+                echo "<p style='font-size: 14px;'><strong>어서오세요!  $userid"."님</strong></p>";    //세션이 있는 경우
+            }
         ?>
 
 
         <center>
             <h1>글쓰기</h1>
-            <a href="./logout.php"><input type="button" value="로그아웃" style = "width: 80px; height: 25px; display: inline-block; float: left; position: relative;  bottom: 82px; left: 30px;"></a>
+            <a href="./logout.php"><input type="button" value="로그아웃" style = "width: 80px; height: 25px; display: inline-block; float: left; position: relative;  bottom: 96px; left: 30px;"></a>
             <div style="border: 2px solid black; width: 680px; height: 550px; position: relative; top: 2px; background-color: #FFFFFF;">
                 <a href = "./community.php?page=1"><input type = "button" value = "뒤로가기" style = "float: left; position: relative; left: 5px; top: 5px;"></a><br><br><br>
                 <form action="./write_process.php" method="post">

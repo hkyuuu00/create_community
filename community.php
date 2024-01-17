@@ -18,7 +18,12 @@
         session_start();
         if(isset($_SESSION['userid'])){      //유저아이디에 세션가 있는지 조사
             $userid = $_SESSION['userid'];
-            echo "<p style='font-size: 14px;'><strong>어서오세요!  $userid"."님</strong></p>";    //세션이 있는 경우
+            if($userid == 'admin'){
+                echo '<a href="./admin.php"><input type="button" value="회원검색" style = "width: 80px; height: 25px; display: inline-block; float: left; position: relative; bottom: 1px; left: 30px;"></a><br><br>';
+            }else{
+                echo "<p style='font-size: 14px;'><strong>어서오세요!  $userid"."님</strong></p>";    //세션이 있는 경우
+            }
+            
         ?>
         <center>
             <a href="./logout.php"><input type="button" value="로그아웃" style = "width: 80px; height: 25px; display: inline-block; float: left; position: relative; bottom: 10px; left: 30px;"></a>

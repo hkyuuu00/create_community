@@ -42,25 +42,36 @@
                 // 데이터베이스 선택
                 $checkid = "select * from member where u_id = '$u_id'";
                 $result = mysqli_query($dbcon, $checkid);
-                $count = mysqli_num_rows($result); //데이터 한 줄을 불러오기
+                $count = mysqli_num_rows($result);
+                $checkphone = "select * from member where u_phone = '$u_phone'";
+                $result2 = mysqli_query($dbcon, $checkphone);
+                $count2 = mysqli_num_rows($result2);
+                 //데이터 한 줄을 불러오기
                 if(strlen($u_id) < 5){
                     echo "<center>5자 이상이어야 합니다. 회원가입을 다시 해주세요.</center>";
                 }else if(strlen($u_id) > 20){
                     echo "<center>20자 미만이어야 합니다. 회원가입을 다시 해주세요.</center>";
                 }else{
-                    if($count == 0){
-                        $query = "INSERT INTO member (u_id, u_pw, u_name, u_gender, u_phone, u_img) VALUES ('$u_id', '$u_pw', '$u_name', '$u_gender', '$u_phone', '$imagepath')";
-                        $check = mysqli_query($dbcon, $query);
-                        // 데이터베이스 질의 전송
+                    if ($count2 == 0){
+                        if($count == 0){
+                            $query = "INSERT INTO member (u_id, u_pw, u_name, u_gender, u_phone, u_img) VALUES ('$u_id', '$u_pw', '$u_name', '$u_gender', '$u_phone', '$imagepath')";
+                            $check = mysqli_query($dbcon, $query);
+                            // 데이터베이스 질의 전송
 
-                        if ($check) {
-                            echo "$u_name 님의 가입이 승인되었습니다.";
-                            echo "<meta http-equiv='refresh' content='2; url=./login.php'>";
-                        } else {
-                            echo "오류가 발생하였습니다. 관리자에게 문의하시오: " . mysqli_error($dbcon);
+                            if ($check) {
+                                echo "$u_name 님의 가입이 승인되었습니다.";
+                                echo "<meta http-equiv='refresh' content='2; url=./login.php'>";
+                            } else {
+                                echo "오류가 발생하였습니다. 관리자에게 문의하시오: " . mysqli_error($dbcon);
+                                echo "<meta http-equiv='refresh' content='2; url=./login.php'>";
+                            }
+                        }else{
+                            echo "<center>중복된 ID 입니다. 회원가입을 다시 해주세요.</center>";
+                            echo "<meta http-equiv='refresh' content='2; url=./join.php'>";
                         }
                     }else{
-                        echo "<center>중복된 ID 입니다. 회원가입을 다시 해주세요.</center>";
+                        echo "<center>중복된 전화번호입니다. 아이디와 비밀번호를 찾아보세요.</center>";
+                        echo "<meta http-equiv='refresh' content='2; url=./login.php'>";
                     }
                 }
                 mysqli_close($dbcon);
